@@ -15,8 +15,7 @@ public class Rectangle {
     
     public Rectangle() {
     }
-    public Rectangle(int uid, String name, int width, int height, String color) {
-        this.uid = uid;
+    public Rectangle(String name, int width, int height, String color) {
         this.name = name;
         this.width = width;
         this.height = height;
