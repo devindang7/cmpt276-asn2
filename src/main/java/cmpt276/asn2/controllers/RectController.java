@@ -31,8 +31,8 @@ public class RectController {
         int newWidth = Integer.parseInt(newRect.get("width"));
         int newHeight = Integer.parseInt(newRect.get("height"));
         String newColor = newRect.get("color");
-        rectRepo.save(new Rectangle(newName, newWidth, newHeight, newColor));
+        rectRepo.save(new Rectangle(newName,newWidth,newHeight,newColor));
         response.setStatus(201);
-        return "/allRects";
+        return "redirect:/rectangles";
     }
 }
