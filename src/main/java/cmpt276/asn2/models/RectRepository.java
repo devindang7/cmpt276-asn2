@@ -8,4 +8,5 @@ public interface RectRepository extends JpaRepository<Rectangle, Integer>{
     List<Rectangle> findByName(String name);
     List<Rectangle> findByWidthAndHeight(int width, int height);
     List<Rectangle> findByColor(String color);
+    List<Rectangle> findByUid(int uid);
 }
