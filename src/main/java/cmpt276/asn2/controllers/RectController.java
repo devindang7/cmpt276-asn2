@@ -63,7 +63,10 @@ public class RectController {
     }
 
     @DeleteMapping("/rectangles/delete/{id}")
-    public String deleteRect(){
+    public String deleteRect(@PathVariable int id){
+        System.out.println("delete");
+        Rectangle currentRect = rectRepo.findById(id).get();
+        rectRepo.delete(currentRect);
         return "redirect:/rectangles";
     }
 }

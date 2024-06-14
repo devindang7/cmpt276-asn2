@@ -25,7 +25,11 @@
                             <td th:text="${iRect.index+1}"></td>
                             <td><a th:text="${rect.name}" role="button" th:href="@{/rectangles/{id}(id=${rect.uid})}"></a></td>
                             <td th:text="${rect.color}"></td>
-                            <!-- <td><form th:action="#" th:attr="@{/rectangles/delete(${iRect.index+1})}"method="post"><button type="submit" class="btn btn-link link-danger border-0 p-0">Delete</button></form></td>" -->
+                            <td>
+                                <form th:action="@{/rectangles/delete/{id}(id=${rect.uid})}" th:method="delete">
+                                    <button type="submit" class="btn btn-link link-danger border-0 p-0">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
