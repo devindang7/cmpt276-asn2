@@ -9,9 +9,9 @@
 <body class="bg-body-secondary">
     <div class="container-fluid">
 		<div class="row justify-content-center">
-			<div class="col-md-8">
+			<div class="col-md-12">
 				<h1 class="text-center mt-5 mb-4" th:text="${rect.name}+' Information'"></h1>
-				<form th:action="@{/rectangles/edit/{id}(id=${rect.uid})}" th:method="post">
+				<form th:action="@{/rectangles/edit/{id}(id=${rect.uid})}" th:method="post" enctype="multipart/form-data">
                     <table class="table">
                         <thead>
                             <tr>
@@ -19,6 +19,7 @@
                                 <th>Width</th>
                                 <th>Height</th>
                                 <th>Color</th>
+                                <th>Image</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +27,8 @@
                                 <td class="col-2"><input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Name" th:value="${rect.name}"></td>
                                 <td class="col-2"><input type="number" id="width" name="width" class="form-control form-control-lg" placeholder="Width" th:value="${rect.width}"></td>
                                 <td class="col-2"><input type="number" id="height" name="height" class="form-control form-control-lg" placeholder="Height" th:value="${rect.height}"></td>
-                                <td class="col-2"><input type="color" id="color" name="color"   class="w-100 form-control form-control-color" style="height:50px" th:value="${rect.color}"></td>
+                                <td class="col-2"><input type="color" id="color" name="color" class="w-100 form-control form-control-color" style="height:50px" th:value="${rect.color}"></td>
+                                <td class="col-4"><input type="file" id="image" name="image" accept="image/*" class="form-control form-control-lg overflow-auto" th:value="${rect.image}"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -40,8 +42,8 @@
             </div>
 		</div>  
 	</div>
+    <!-- <div><img th:src="${rect.image}" alt=""></img></div> -->
     <div th:text="${rect.name}" class="mt-3 row justify-content-center" ></div>
     <div th:style="'width:'+${rect.width}+'px;height:'+${rect.height}+'px;background-color:'+${rect.color}" class="m-auto"></div></div>
-    
 </body>
 </html>

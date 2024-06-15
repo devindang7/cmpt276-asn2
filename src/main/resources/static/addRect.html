@@ -11,12 +11,13 @@
 		<div class="row justify-content-center">
 			<div class="col-md-4">
 				<h1 class="text-center mt-5 mb-4">Add a New Rectangle</h1>
-				<form action="/rectangles/add" method="post">
+				<form action="/rectangles/add" method="post" enctype="multipart/form-data">
                     <div class="d-grid gap-2">
                         <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Name">
                         <input type="number" id="width" name="width" class="form-control form-control-lg" placeholder="Width">
                         <input type="number" id="height" name="height" class="form-control form-control-lg" placeholder="Height">
                         <input type="color" id="color" name="color" value="#ff0000" style="height:50px" class="w-100 form-control form-control-color">
+                        <input type="file" id="image" name="image" accept="image/*" class="form-control form-control-lg">
                     </div>
                     <div class="d-grid mt-3">
                         <input class="btn btn-primary" type="submit" value="Add"></input>
