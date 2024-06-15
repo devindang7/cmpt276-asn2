@@ -12,16 +12,14 @@ public class Rectangle {
     private int width;
     private int height;
     private String color;
-    private String image;
     
     public Rectangle() {
     }
-    public Rectangle(String name,int width,int height,String color, String image) {
+    public Rectangle(String name,int width,int height,String color) {
         this.name=name;
         this.width=width;
         this.height=height;
         this.color=color;
-        this.image=image;
     }
     public int getUid() {
         return uid;
@@ -53,10 +51,5 @@ public class Rectangle {
     public void setColor(String color) {
         this.color=color;
     }
-    public String getImage() {
-        return image;
-    }
-    public void setImage(String image) {
-        this.image=image;
-    }
+    
 }
