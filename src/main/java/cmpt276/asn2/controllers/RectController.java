@@ -37,7 +37,7 @@ public class RectController {
     public String getRectangles(Model model) {
         List<Rectangle> rects=rectRepo.findAll(Sort.by(Sort.Direction.ASC, "uid"));
         model.addAttribute("rects", rects);
-        return "/allRects";
+        return "allRects.html";
     }
 
     @PostMapping("/rectangles/add")
@@ -57,7 +57,7 @@ public class RectController {
     public String showEditRect(Model model, @PathVariable int id){
         Rectangle rect=rectRepo.findById(id).get();
         model.addAttribute("rect", rect);
-        return "/editRect";
+        return "editRect.html";
     }
 
     @PostMapping("/rectangles/edit/{id}")
